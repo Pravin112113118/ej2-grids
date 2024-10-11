@@ -19,45 +19,8 @@ steps:
   displayName: 'Run a multi-line script'
 - task: MicrosoftSecurityDevOps@1
   displayName: 'Microsoft Security DevOps'
-
-{
-  "tools": [
-    {
-      "tool": {
-        "name": "ESLint",
-        "version": "Latest"
-      },
-      "arguments": {
-        "DisableDefaultConfigurationFile": true,
-        "ResolvePluginsRelativeTo": "",
-        "ConfigurationFile": "$(SDLRequiredConfigurationFile)",
-        "Environments": "",
-        "Extensions": [".js", ".ts"],
-        "Globals": "",
-        "Parser": "",
-        "ParserOptions": "",
-        "AdditionalRulesDirectories": "",
-        "Plugins": "",
-        "Rules": "",
-        "Fix": "",
-        "FixDryRun": "",
-        "FixTypes": "",
-        "ExclusionsFilePath": "",
-        "DisableExclusions": "",
-        "ExclusionPatterns": "*.d.ts",
-        "Quiet": "",
-        "MaxWarnings": "",
-        "ExitOnFatalError": "",
-        "OutputFile": "",
-        "OutputFormat": "$(InstallDirectory)\\node_modules\\@microsoft\\eslint-formatter-sarif\\sarif.js",
-        "DisableInlineConfig": "",
-        "ReportUnusedDisableDirectives": "",
-        "Cache": "",
-        "CacheLocation": "",
-        "Debug": "",
-        "Help": "",
-        "Targets": "$(DefaultTargets)"
-      }
-    }
-  ]
-}
+  inputs:
+    categories: 'code'
+    tools: 'eslint'
+    publish: true
+    artifactName: 'CodeAnalysisLogs*'
