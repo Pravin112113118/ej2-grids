@@ -23,4 +23,4 @@ steps:
     categories: 'code'
     tools: 'eslint'
     publish: true
-    artifactName: 'CodeAnalysisLogs*'
+    artifactName: 'CodeAnalysisLogs'
